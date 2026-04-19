@@ -9,6 +9,7 @@ public class Aliens {
 	private double precioExtremidad;
 	private double precioOjos;
 	private double precioCuerpo;
+	private double precioTotal;
 	
 	public Aliens(int tamanio, String color) {
 		super();
@@ -22,6 +23,7 @@ public class Aliens {
 		this.precioCuerpo=this.tamanio*0.20;
 		this.precioExtremidad=this.tamanio*0.10;
 		this.precioOjos=this.tamanio*0.05;
+		this.precioTotal=0;
 	}
 
 	public int getTamanio() {
@@ -48,6 +50,9 @@ public class Aliens {
 	public double getPrecioCuerpo() {
 		return precioCuerpo;
 	}
+	public double getPrecioTotal() {
+		return precioTotal;
+	}
 
 	public void imprimir() {
 	String mensaje=" Tamaño: "+tamanio
@@ -57,7 +62,9 @@ public class Aliens {
 			+" Numero de Pies: "+numeroPies
 			+" Precio de Extremidades: "+precioExtremidad
 			+" Precio de Ojos: "+precioOjos
-			+" Precio de Cuerpo: "+precioCuerpo;
+			+" Precio de Cuerpo: "+precioCuerpo
+			+" Precio Total: "+precioTotal;
+	
 	System.out.println(mensaje);
 	}
 	
@@ -66,6 +73,7 @@ public class Aliens {
 		
 		if(extremidades<=10) {
 			this.numeroBrazos+=cantidad;
+			 calcularPrecioTotal();
 			return true;
 		}else {
 			return false;
@@ -76,6 +84,7 @@ public class Aliens {
 		
 		if(extremidades<=10) {
 			this.numeroPies+=cantidad;
+			 calcularPrecioTotal();
 			return true;
 		}else {
 			return false;
@@ -94,11 +103,16 @@ public class Aliens {
 		
 		if(limite > 0 && (this.numeroOjos + cantidad)<=limite) {
 			this.numeroOjos+=cantidad;
+			 calcularPrecioTotal();
 			return true;
 		}
 			
 		return false;
-
+	}
+	public void calcularPrecioTotal() {
+		int extremidades=numeroBrazos+numeroPies;
+		double suma=precioCuerpo+(extremidades*precioExtremidad)+(numeroOjos*precioOjos);
+		this.precioTotal=suma;
 	}
 
 }
