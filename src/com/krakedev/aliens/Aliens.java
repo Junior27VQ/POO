@@ -55,10 +55,31 @@ public class Aliens {
 			+" Numero de Ojos: "+numeroOjos
 			+" Numero de Brazos: "+numeroBrazos
 			+" Numero de Pies: "+numeroPies
-			+" Precio de Extremidades"+precioExtremidad
+			+" Precio de Extremidades: "+precioExtremidad
 			+" Precio de Ojos: "+precioOjos
 			+" Precio de Cuerpo: "+precioCuerpo;
 	System.out.println(mensaje);
+	}
+	
+	public boolean agregarBrazos(int cantidad) {
+		int extremidades=this.numeroBrazos+this.numeroPies+cantidad;
+		
+		if(extremidades<=10) {
+			this.numeroBrazos+=cantidad;
+			return true;
+		}else {
+			return false;
+		}
+	}
+	public boolean agregarPiernas(int cantidad) {
+		int extremidades=numeroBrazos+numeroPies+cantidad;
+		
+		if(extremidades<=10) {
+			this.numeroPies+=cantidad;
+			return true;
+		}else {
+			return false;
+		}
 	}
 	
 
