@@ -24,10 +24,10 @@ public class TestConstructores {
         // Caso: Ir agregando poco a poco
         alien.agregarBrazos(2); // Total 2
         alien.agregarPiernas(3); // Total 5
-        boolean resultadoFinal = alien.agregarBrazos(4);
+        boolean resultadoFinal = alien.agregarOjos(4);
         System.out.println(resultadoFinal);
 		alien.imprimir();
-
+		
 	}
 
 }
