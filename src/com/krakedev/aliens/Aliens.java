@@ -12,7 +12,7 @@ public class Aliens {
 	
 	public Aliens(int tamanio, String color) {
 		super();
-		if(tamanio<=5 & tamanio>=30) {
+		if(tamanio>=5 & tamanio<=30) {
 			this.tamanio = tamanio;
 			this.color = color;
 		}else {
