@@ -24,4 +24,42 @@ public class Aliens {
 		this.precioOjos=this.tamanio*0.05;
 	}
 
+	public int getTamanio() {
+		return tamanio;
+	}
+	public String getColor() {
+		return color;
+	}
+	public int getNumeroOjos() {
+		return numeroOjos;
+	}
+	public int getNumeroBrazos() {
+		return numeroBrazos;
+	}
+	public int getNumeroPies() {
+		return numeroPies;
+	}
+	public double getPrecioExtremidad() {
+		return precioExtremidad;
+	}
+	public double getPrecioOjos() {
+		return precioOjos;
+	}
+	public double getPrecioCuerpo() {
+		return precioCuerpo;
+	}
+
+	public void imprimir() {
+	String mensaje=" Tamaño: "+tamanio
+			+" Color: "+color
+			+" Numero de Ojos: "+numeroOjos
+			+" Numero de Brazos: "+numeroBrazos
+			+" Numero de Pies: "+numeroPies
+			+" Precio de Extremidades"+precioExtremidad
+			+" Precio de Ojos: "+precioOjos
+			+" Precio de Cuerpo: "+precioCuerpo;
+	System.out.println(mensaje);
+	}
+	
+
 }
